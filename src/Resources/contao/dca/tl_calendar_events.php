@@ -1074,14 +1074,14 @@ class tl_calendar_events_ext extends \Backend
         }
 
         // Set the array of dates
-        if (is_array($arrDates) && is_array($arrFixDates)) {
+        if (isset($arrDates) && is_array($arrFixDates)) {
             $arrAllDates = $arrDates + $arrFixDates;
             ksort($arrAllDates);
             $arrSet['repeatDates'] = $arrAllDates;
         }
 
         // sort $arrAllRecurrences
-        if (is_array($arrAllRecurrences)) {
+        if (isset($arrAllRecurrences)) {
             ksort($arrAllRecurrences);
             $arrSet['allRecurrences'] = $arrAllRecurrences;
         }
