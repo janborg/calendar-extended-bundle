@@ -22,9 +22,9 @@ foreach ($GLOBALS['TL_DCA']['tl_calendar_events']['config']['onsubmit_callback']
     }
 }
 
-foreach($GLOBALS['TL_DCA']['tl_calendar_events']['palettes'] as &$palette) {
+/*foreach($GLOBALS['TL_DCA']['tl_calendar_events']['palettes'] as &$palette) {
   $palette = str_replace('endDate', 'endDate,hideOnWeekend', $palette);
-}
+}*/
 
 $GLOBALS['TL_DCA']['tl_calendar_events']['palettes']['default'] = str_replace
 (
