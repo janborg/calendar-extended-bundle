@@ -284,7 +284,7 @@ class EventsExt extends Events
                         }
 
                         // check if there is any exception
-                        if (is_array($arrEventSkipInfo[$objEvents->id])) {
+                        if (isset($arrEventSkipInfo[$objEvents->id])) {
                             // modify the css class of the exceptions
                             $objEvents->cssClass = $masterCSSClass;
                             unset($objEvents->moveReason);
@@ -349,7 +349,7 @@ class EventsExt extends Events
                         // Skip events outside the scope
                         if ($objEvents->endTime < $intStart || $objEvents->startTime > $intEnd) {
                             // in case of a move we have to reset the original date
-                            if ($oldDate) {
+                            if (isset($oldDate)) {
                                 $objEvents->startTime = $oldDate['startTime'];
                                 $objEvents->endTime = $oldDate['endTime'];
                             }
@@ -390,7 +390,7 @@ class EventsExt extends Events
                         $objEvents->oldEndTime = null;
 
                         // in case of a move we have to reset the original date
-                        if ($oldDate) {
+                        if (isset($oldDate)) {
                             $objEvents->startTime = $oldDate['startTime'];
                             $objEvents->endTime = $oldDate['endTime'];
                         }
