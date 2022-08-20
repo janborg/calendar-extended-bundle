@@ -239,7 +239,7 @@ class ModuleEventReader extends EventsExt
 
       if (is_array($arrRange) && isset($arrRange['unit']) && isset($arrRange['value'])) {
         $strKey = 'cal_' . $arrRange['unit'];
-        $recurring = sprintf($GLOBALS['TL_LANG']['MSC'][$strKey], $arrRange['value']);
+       //$recurring = sprintf($GLOBALS['TL_LANG']['MSC'][$strKey], $arrRange['value']);
 
         if ($objEvent->recurrences > 0) {
           $until = sprintf($GLOBALS['TL_LANG']['MSC']['cal_until'], \Date::parse($objPage->dateFormat, $objEvent->repeatEnd));
@@ -252,7 +252,7 @@ class ModuleEventReader extends EventsExt
       $arrRange = deserialize($objEvent->repeatEachExt);
       $strKey = 'cal_' . $arrRange['value'];
       $strVal = $GLOBALS['TL_LANG']['DAYS'][$GLOBALS['TL_LANG']['DAYS'][$arrRange['unit']]];
-      $recurring = sprintf($GLOBALS['TL_LANG']['MSC'][$strKey], $strVal);
+      //$recurring = sprintf($GLOBALS['TL_LANG']['MSC'][$strKey], $strVal);
 
       if ($objEvent->recurrences > 0) {
         $until = sprintf($GLOBALS['TL_LANG']['MSC']['cal_until'], \Date::parse($objPage->dateFormat, $objEvent->repeatEnd));
@@ -341,7 +341,7 @@ class ModuleEventReader extends EventsExt
     $objTemplate->begin = $intStartTime;
     $objTemplate->end = $intEndTime;
     $objTemplate->class = ($objEvent->cssClass != '') ? ' ' . $objEvent->cssClass : '';
-    $objTemplate->recurring = $recurring;
+    //$objTemplate->recurring = $recurring;
     $objTemplate->until = $until;
     $objTemplate->locationLabel = $GLOBALS['TL_LANG']['MSC']['location'];
     $objTemplate->calendar = $objEvent->getRelated('pid');
