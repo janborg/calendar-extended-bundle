@@ -306,10 +306,10 @@ class ModuleCalendar extends EventsExt
                 foreach ($v as $vv) {
                     $vv['calendar_title'] = $this->calConf[$vv['pid']]['calendar'];
 
-                    if ($this->calConf[$vv['pid']]['background']) {
+                    if (isset($this->calConf[$vv['pid']]['background'])) {
                         $vv['bgstyle'] = $this->calConf[$vv['pid']]['background'];
                     }
-                    if ($this->calConf[$vv['pid']]['foreground']) {
+                    if (isset($this->calConf[$vv['pid']]['foreground'])) {
                         $vv['fgstyle'] = $this->calConf[$vv['pid']]['foreground'];
                     }
                     $arrEvents[] = $vv;
